@@ -1,18 +1,26 @@
 "use client";
 
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect, useCallback, forwardRef, useImperativeHandle } from "react";
 import { ArrowUp } from "lucide-react";
 import { ChatMessage } from "@/types/chat";
 import MessageBubble from "./MessageBubble";
 import TypingIndicator from "./TypingIndicator";
 import SuggestionChips from "./SuggestionChips";
 
-export default function ChatWindow() {
+const ChatWindow = forwardRef(function ChatWindow(_props, ref) {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  useImperativeHandle(ref, () => ({
+    clearChat: () => {
+      setMessages([]);
+      setInput("");
+      setIsLoading(false);
+    },
+  }));
 
   const scrollToBottom = useCallback(() => {
     if (scrollRef.current) {
@@ -164,4 +172,6 @@ export default function ChatWindow() {
       </div>
     </div>
   );
-}
+});
+
+export default ChatWindow;

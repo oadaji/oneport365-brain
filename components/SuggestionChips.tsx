@@ -1,10 +1,10 @@
 "use client";
 
 const suggestions = [
-  "Summarise today's RFQs",
-  "Draft a rate response email",
-  "What documents are needed for Nigeria import?",
-  "Explain FCL vs LCL",
+  "Show top 10 accounts payable",
+  "What invoices are overdue?",
+  "Show me this year's revenue trend",
+  "What's our cash flow position?",
 ];
 
 export default function SuggestionChips({ onSelect }: { onSelect: (text: string) => void }) {
