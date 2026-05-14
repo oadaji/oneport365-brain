@@ -13,7 +13,7 @@ export default function SuggestionChips({ onSelect }: { onSelect: (text: string)
       <div className="text-6xl mb-4">🧠</div>
       <h2 className="text-xl font-bold mb-1" style={{ color: "#1a2d1c" }}>OnePort 365 Brain</h2>
       <p className="text-sm mb-6" style={{ color: "#2d5225" }}>
-        Your AI assistant for freight, invoices and operations
+        Your AI assistant for Commercial, Finance and Operations
       </p>
       <div className="flex flex-wrap justify-center gap-2 max-w-lg">
         {suggestions.map((s) => (
