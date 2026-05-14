@@ -7,16 +7,7 @@ export default function Navbar() {
         <img src="/oneport365-logo.png" alt="OnePort 365" style={{ height: "28px", width: "auto" }} />
         <span className="text-white font-bold text-sm tracking-tight">Brain</span>
       </div>
-      <div className="flex items-center gap-2">
-        <span
-          className="w-2.5 h-2.5 rounded-full"
-          style={{
-            backgroundColor: "#7dba6a",
-            animation: "pulse-online 2s ease-in-out infinite",
-          }}
-        />
-        <span className="text-xs font-medium" style={{ color: "#7dba6a" }}>Online</span>
-      </div>
+      <div />
     </nav>
   );
 }
